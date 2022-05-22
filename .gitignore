@@ -1,3 +1,10 @@
+# C Build files
+/EXTERNAL/*.o
+/EXTERNAL/*.so
+
+# Temporary files for development
+/TEMP/
+
 # History files
 .Rhistory
 .Rapp.history
