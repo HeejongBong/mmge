@@ -1,0 +1,16 @@
+Package: mmge
+Title: Simultaneous Inference in Multiple Matrix-Variate Graphs for High-Dimensional Neural Recordings
+Version: 0.0.0.9000
+Authors@R: 
+    person("Heejong", "Bong", , "hbong@andrew.cmu.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-3906-2175"))
+    person("Zongge", "Liu", , "zonggeliu@gmail.com", role = c("aut", "cre"),
+           comment = c())
+Description: Simultaneous Inference in Multiple Matrix-Variate Graphs for High-Dimensional Neural Recordings
+Imports:
+         MASS,
+         gglasso
+License: use_mit_license()
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
