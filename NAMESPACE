@@ -3,6 +3,7 @@
 export(BlWh.colors)
 export(RdBl.colors)
 export(WhBl.colors)
+export(cov.multiple.edge)
 export(est.spatial)
 export(est.temporal)
 export(imshow)

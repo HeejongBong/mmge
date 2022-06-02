@@ -10,7 +10,7 @@ inf.multiple.edge(
   ns,
   E.set = NULL,
   E.mat = NULL,
-  num.bst = 10000
+  num.bst = 0
 )
 }
 \arguments{
@@ -19,17 +19,25 @@ inf.multiple.edge(
 \item{S.hat.T}{List with length \code{m} of 2-dimensional array (\code{p*p}) containing the temporal covariance matrix estimates over \code{m} sessions.}
 
 \item{ns}{Number of trials. A numeric for all sessions or a sequence of a different order for each session can be given.}
+
+\item{E.set}{2-dimensional integer array of size \code{num.E*2} containing the pairs of index for the nodes the target edges connect. If not provided, it is postulated from argument \code{E.mat}.}
+
+\item{E.mat}{2-dimensional boolen array of size \code{q*q} containing the adjacency matrix of the target edges. if not provided, it is postulated from arguemnt \code{E.set}.}
+
+\item{num.bst}{Integer value for the number of bootstrap iterations. If it is 0, the bootstrap test is not performed.}
 }
 \value{
 List of output containing the inference result.
 
 \code{R.hat.S} List of the estimated partial correlation matrix at each session.
 
-\code{p.value} p-values for the global null hypothesis
-
 \code{T.hat.E} Estimated test statistics
 
 \code{Cov.T.E} Estimated covariance matrix for the test statistics
+
+\code{l.inf.Z} Bootstrap samples of l-infinity norm of zetas
+
+\code{p.value} p-values for the global null hypothesis. Not returned, if \code{num.bst} is not positive
 }
 \description{
 This function performs a statistical test on a global null hypothesis over a given
