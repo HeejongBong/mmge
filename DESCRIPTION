@@ -9,7 +9,8 @@ Authors@R:
 Description: Simultaneous Inference in Multiple Matrix-Variate Graphs for High-Dimensional Neural Recordings
 Imports:
          MASS,
-         gglasso
+         gglasso,
+         Matrix
 License: use_mit_license()
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

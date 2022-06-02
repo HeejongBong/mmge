@@ -140,7 +140,7 @@ inf.single.rkfl = function(W.hat.S, ns){
     }), accumulate=FALSE)
     
     # P-values
-    p.value = 1 - pnorm(T.hat / sqrt(Var.T.hat))
+    p.value = 2 * (1 - pnorm(abs(T.hat) / sqrt(Var.T.hat)))
 
     return(list(p.value=p.value, T.hat=T.hat, Var.T.hat=Var.T.hat))
 }
