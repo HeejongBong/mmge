@@ -46,7 +46,7 @@ WhBl.colors = function(n=256){
 #' @param col Color palette at which the image is plotted.
 #' @return Imageplot of the input in the matrix position.
 #' @export
-imshow = function(x, vmin=NULL, vmax=NULL, col=RdBl.colors(256)){
+imshow = function(x, vmin=NULL, vmax=NULL, col=RdBl.colors(256), ...){
     if(is.null(vmax)){
         vmax = max(abs(x))
     }
@@ -55,5 +55,5 @@ imshow = function(x, vmin=NULL, vmax=NULL, col=RdBl.colors(256)){
     }
     
     heatmap(x, Rowv=NA, Colv=NA, revC=TRUE, scale="none",
-            col = col, zlim = c(vmin,vmax))
+            col = col, zlim = c(vmin,vmax), ...)
 }

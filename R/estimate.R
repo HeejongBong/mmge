@@ -25,8 +25,8 @@ est.spatial<- function(data, lambdas=NULL, eps=1e-4, maxit=1e+4, verbose=FALSE){
     q = dim(data[[1]])[2] # No. of spatial channels
     
     # No. of trials in each session
-    ns = sapply(data, function(x){dim(x)[3]})
-    sess.id = c(sapply(1:m, function(l){rep(l,ns[l])}))
+    ns = unlist(lapply(data, function(x){dim(x)[3]}))
+    sess.id = unlist(lapply(1:m, function(l){rep(l,ns[l])}))
 
     # Default lambda
     if(is.null(lambdas)){
@@ -124,8 +124,8 @@ est.temporal <- function(data, order.T=NULL, decay.T=NULL, verbose=FALSE){
     q = dim(data[[1]])[2] # No. of space points
     
     # No. of trials in each session
-    ns = sapply(data, function(x){dim(x)[3]})
-    sess.id = c(sapply(1:m, function(l){rep(l,ns[l])}))
+    ns = unlist(lapply(data, function(x){dim(x)[3]}))
+    sess.id = unlist(lapply(1:m, function(l){rep(l,ns[l])}))
     
     # Default values for decay.T and order.T
     if(is.null(decay.T)){
